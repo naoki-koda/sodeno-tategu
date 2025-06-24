@@ -17,8 +17,8 @@ export default function Header() {
             <Image
               src="/favicon.ico"
               alt="Site Icon"
-              width={36}
-              height={36}
+              width={37}
+              height={37}
             />
             <Link href="/" className="text-xl font-bold ">
               袖野建具店
