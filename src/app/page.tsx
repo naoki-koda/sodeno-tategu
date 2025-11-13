@@ -1,10 +1,18 @@
-import Image from 'next/image';
-import { kosugiMaru } from '@/app/ui/fonts';
+import AnimatedHeroImage from '@/app/ui/HeroBock';
 
-export default function HeroImage() {
+export default function Page() {
   return (
-    <>
-      <div className="relative w-screen h-[600px] md:h-[600px]" >
+    <main>
+      <AnimatedHeroImage
+        src="/topimage.webp"
+        alt="和モダンな室内"
+        companyName="令和のホームページ"
+        slogan="和モダン × シンプルデザインで、ビジネスを魅せる。"
+        logoSrc="/logoandtext.png"
+      />
+
+
+      {/* <div className="relative w-screen h-[600px] md:h-[600px]" >
         <Image
           src="/topimage.jpg"       // public/header.jpg に画像を置く
           alt="Hero Image"
@@ -25,8 +33,14 @@ export default function HeroImage() {
             袖野建具店
           </h1>
         </div>
-      </div >
-      <section className="bg-gray-100 rounded-xl p-8 my-12 mx-4 md:mx-auto max-w-5xl text-center">
+      </div > */}
+
+      {/* <section className="rounded-xl inset-0 p-7 my-12 mx-4 h-[408px] md:mx-auto max-w-7xl bg-no-repeat bg-cover bg-center" */}
+      {/*   style={{ backgroundImage: "url('/bg-shokunin.jpg')" }}> */}
+      {/*   <div className="absolute inset-0 bg-white bg-opacity-50 rounded-xl"></div> */}
+      {/* </section> */}
+      {/**/}
+      <section className="bg-gray-100 rounded-xl p-8 my-12 mx-4 md:mx-auto max-w-7xl text-center">
         <h2 className="text-2xl font-bold mb-2">Area</h2>
         <p className="text-lg font-bold mb-6">愛知県　名古屋市</p>
 
@@ -69,6 +83,6 @@ export default function HeroImage() {
         </div>
 
       </section>
-    </>
+    </main>
   );
 }

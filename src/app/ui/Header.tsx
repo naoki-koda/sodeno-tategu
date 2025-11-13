@@ -1,96 +1,126 @@
 'use client'
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { kosugiMaru } from '@/app/ui/fonts';
+import { Button } from '@/components/ui/button';
+import {
+  Bars3Icon,
+  BookOpenIcon,
+  BuildingOffice2Icon,
+  CurrencyDollarIcon, EnvelopeIcon,
+  HomeIcon,
+  WrenchIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-
+const NAV_ITEMS = [
+  {
+    href: '/',
+    label: 'Top',
+    subLabel: 'トップページ',
+    icon: HomeIcon,
+  },
+  {
+    href: '/about',
+    label: 'ABOUTUS',
+    subLabel: '会社案内',
+    icon: BuildingOffice2Icon,
+  },
+  {
+    href: '/works',
+    label: 'WORKS',
+    subLabel: '制作事例',
+    icon: WrenchIcon,
+  },
+  {
+    href: '/qa',
+    label: 'Q&A',
+    subLabel: 'デザイン',
+    icon: BookOpenIcon,
+  },
+  {
+    href: '/price',
+    label: 'PRICE',
+    subLabel: '料金プラン',
+    icon: CurrencyDollarIcon,
+  },
+  {
+    href: '/contact',
+    label: 'CONTACT',
+    subLabel: 'お問い合わせ',
+    icon: EnvelopeIcon,
+  },
+];
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <header className={`relative sticky top-0 z-30 bg-gray-800 text-white p-4 ${kosugiMaru.className}`}>
-        <div className="relative mx-auto flex items-center justify-center px-4">
-          <div className="flex items-center space-x-2">
-            <Image
-              src="/favicon.ico"
-              alt="Site Icon"
-              width={37}
-              height={37}
-            />
-            <Link href="/" className="text-xl font-bold ">
-              袖野建具店
-            </Link>
-          </div>
-          <div className="absolute right-4">
-            <button
-              aria-label="メニューを開く"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ?
-                (<XMarkIcon className="h-6 w-6 text-white hover:text-gray-300" />)
-                :
-                (<Bars3Icon className="h-6 w-6 text-white hover:text-gray-300 " />)
-              }
-            </button>
-          </div>
+      <header className={`relative sticky top-0 z-30 bg-zinc-800 text-white p-4`}>
+        <div className="mx-auto flex h-full max-w-5xl items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 text-teal-950">
+            <Image src="/ico_white.ico" alt="Site Icon" width={50} height={50} className="rounded-lg" />
+            <Image src="/logotext.svg" alt="Site Icon" width={125} height={125} />
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-gray-100 md:flex">
+            {NAV_ITEMS.map(({ href, subLabel }) => (
+                <Button
+                key={href}
+                asChild
+                variant="ghost" // ghost = 背景なしで上品
+                className="text-slate-100 hover:text-sky-600 transition-colors font-semibold"
+                >
+                <Link href={href}>{subLabel}</Link>
+                </Button>
+            ))}
+          </nav>
+          <button
+            type="button"
+            aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-teal-950 shadow-sm transition hover:bg-white/50 md:hidden"
+          >
+            {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+          </button>
         </div>
       </header>
-      {/* オーバーレイ（クリックで閉じる） */}
+
       {isMenuOpen && (
-        <div
-          className="fixed inset-0 z-10"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-      {
-        isMenuOpen && (
-          <nav className="fixed top-0 right-0 h-full w-64 bg-gray-800 shadow-md z-20 pt-16 p-4">
-            <ul className="flex flex-col p-4 space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-white block hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}>
-                  TOP
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/works"
-                  className="text-white block hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}>
-                  施工事例
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/price"
-                  className="text-white block hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  料金
+        <nav
+          className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-gray-800 px-6 pb-12 pt-8 text-teal-950 md:hidden font-jp`}
+        >
+          <div className="mx-auto w-full max-w-sm flex-1 space-y-6 overflow-y-auto">
+            <div className="flex items-center justify-between text-white">
+            </div>
 
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-white block hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  お問い合わせ
-
-                </Link>
-              </li>
-
+            <ul className="flex flex-col space-y-4">
+              {NAV_ITEMS.map(({ href, label, subLabel, icon: Icon }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group block rounded-3xl border border-white/20 bg-white/15 px-6 py-5 text-center text-teal-950 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur transition hover:border-white/40 hover:bg-white/25 hover:text-white/90"
+                  >
+                    <div className="flex flex-col items-center gap-3">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-teal-950 shadow-sm shadow-orange-200/40 transition group-hover:bg-white group-hover:text-gray-500">
+                        <Icon className="h-6 w-6" />
+                      </span>
+                      <div className="space-y-1">
+                        <span className="block text-gray-100 font-semibold">{label}</span>
+                        <div className="mx-auto h-px w-14 bg-gradient-to-r from-gray-100 to-gray-400" />
+                        {/* <span className="block text-xs tracking-wide text-slate-700 group-hover:text-white/80">
+                          {subLabel}
+                        </span> */}
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </nav>
-        )
-      }
+          </div>
+        </nav>
+      )}
     </>
   );
 

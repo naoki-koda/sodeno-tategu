@@ -8,7 +8,7 @@ export default function Form() {
   const [state, formAction] = useActionState(sendMail, initialState);
   return (
     <form action={formAction}>
-      <div className="rounded-xl bg-gray-100 mx-4 my-4 p-4 md-p-6">
+      <div className="rounded-xl bg-gray-100 mx-4 my-4 p-4 md-p-6 dark:bg-gray-800">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="lastName" className="md-1 block text-sm font-medium">
@@ -102,7 +102,7 @@ export default function Form() {
           </input>
         </div>
         <div className="mt-4">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="message" className="block text-sm font-medium">
             お問い合わせ内容
           </label>
           <textarea

@@ -12,6 +12,9 @@ export default function Page() {
         <p>下記メールフォーム、またはお電話にてお問い合わせください。</p>
       </div>
       <Form />
+      <section className="rounded-md bg-gray-400">
+
+      </section>
     </>
   )
 }
