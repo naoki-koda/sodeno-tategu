@@ -1,20 +1,17 @@
-import Link from 'next/link';
-import Form from '@/app/ui/contact/contact-form';
-import { kosugiMaru } from '@/app/ui/fonts';
+import ContactForm from '@/app/ui/contact/contact-form';
 
 export default function Page() {
   return (
-    <>
-      <div className="flex justify-center gap-4 mt-4">
-        <h2 className={`text-2xl font-bold ${kosugiMaru.className}`}>お問い合わせ</h2>
-      </div>
-      <div className="text-center mt-4">
-        <p>下記メールフォーム、またはお電話にてお問い合わせください。</p>
-      </div>
-      <Form />
-      <section className="rounded-md bg-gray-400">
+    <main className="mx-auto max-w-3xl px-4 py-12">
+      <header>
+        <h1 className="text-3xl font-semibold tracking-tight">お問い合わせ</h1>
+        <p className="mt-4 text-sm text-slate-600">
+          下記フォームに必要事項をご入力のうえ送信してください。<br />
+          内容を確認のうえ、担当者よりご連絡いたします。
+        </p>
+      </header>
 
-      </section>
-    </>
-  )
+      <ContactForm />
+    </main>
+  );
 }

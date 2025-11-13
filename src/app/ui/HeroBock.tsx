@@ -35,7 +35,7 @@ export default function AnimatedHeroImage({
   className = "",
   companyName = "令和のホームページ",
   slogan = "和モダン × シンプルデザインで、ビジネスを魅せる。",
-  logoSrc = "/logo.svg",
+  logoSrc = "",
 }: AnimatedHeroImageProps) {
   return (
     <MotionConfig reducedMotion="user">
@@ -59,28 +59,28 @@ export default function AnimatedHeroImage({
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
 
         {/* コンテンツ */}
-        <div className="relative z-10 flex flex-col items-center text-center text-white px-6">
+        <div className="relative z-10 flex flex-col items-center text-center text-white px-3">
           {/* ロゴ */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 20 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Image
               src={logoSrc}
               alt={`${companyName} ロゴ`}
-              width={256}
-              height={256}
+              width={512}
+              height={512}
               className="drop-shadow-md"
             />
           </motion.div>
 
           {/* 会社名 */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold tracking-wide drop-shadow-lg"
+            className="text-4xl md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
           >
             {companyName}
           </motion.h1>
@@ -90,7 +90,7 @@ export default function AnimatedHeroImage({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.8 }}
-            className="mt-4 text-lg md:text-2xl text-white/90"
+            className="text-lg md:text-2xl text-white/90"
           >
             {slogan}
           </motion.p>

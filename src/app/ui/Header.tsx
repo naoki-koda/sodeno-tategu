@@ -34,15 +34,15 @@ const NAV_ITEMS = [
     icon: WrenchIcon,
   },
   {
-    href: '/qa',
+    href: '/faq',
     label: 'Q&A',
-    subLabel: 'デザイン',
+    subLabel: 'よくあるご質問',
     icon: BookOpenIcon,
   },
   {
     href: '/price',
     label: 'PRICE',
-    subLabel: '料金プラン',
+    subLabel: '料金について',
     icon: CurrencyDollarIcon,
   },
   {

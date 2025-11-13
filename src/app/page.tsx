@@ -1,4 +1,5 @@
 import AnimatedHeroImage from '@/app/ui/HeroBock';
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -6,42 +7,180 @@ export default function Page() {
       <AnimatedHeroImage
         src="/topimage.webp"
         alt="和モダンな室内"
-        companyName="令和のホームページ"
-        slogan="和モダン × シンプルデザインで、ビジネスを魅せる。"
+        companyName="名古屋を拠点とする建具店"
+        slogan="住まいに馴染む、美しい建具を"
         logoSrc="/logoandtext.png"
       />
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 via-white to-gray-100 shadow-sm border border-gray-100">
+          <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 items-center">
+            {/* 左：イメージ画像 */}
+            <div className="relative">
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-md bg-gray-200">
+                <Image
+                  src="/topimage.webp" // ← お好みのパスに変更してください
+                  alt="袖野建具店の作業風景"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <p className="mt-4 text-xs text-gray-500">
+                ※写真はイメージです。実際の工房・現場風景とは異なる場合があります。
+              </p>
+            </div>
 
+            {/* 右：テキストエリア */}
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              {/* 小ラベル */}
+              <span className="inline-flex items-center rounded-full bg-gray-900 text-white text-xs px-3 py-1 tracking-[0.2em] uppercase">
+                ABOUT
+              </span>
 
-      {/* <div className="relative w-screen h-[600px] md:h-[600px]" >
-        <Image
-          src="/topimage.jpg"       // public/header.jpg に画像を置く
-          alt="Hero Image"
-          fill                   // 親要素いっぱいに画像を広げる
-          style={{ objectFit: 'cover' }}  // 画像を枠にフィットさせてトリミング
-          priority               // 先読みで表示を速く
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
-            src="/icon.svg"
-            alt="Company Icon"
-            width={256}
-            height={256}
-          />
+              <h2 className="text-3xl font-bold mt-2">
+                袖野建具店について
+              </h2>
 
-          <h1 className={`text-white text-4xl font-bold drop-shadow-2xl ${kosugiMaru.className}`}
-            style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
-            袖野建具店
-          </h1>
+              <p>
+                袖野建具店は、名古屋を拠点に
+                <span className="font-semibold">40年以上</span>
+                の歴史を持つ、一人の職人が営む小さな建具店です。
+                ひとつひとつのご依頼に真摯に向き合い、細部まで丁寧に仕上げることを大切にしています。
+              </p>
+
+              <p>
+                建具（引き戸・開き戸・障子・ふすま・框戸）はもちろん、
+                カップボードや収納棚などの
+                <span className="font-semibold">造作家具</span>
+                まで、木で作れるものであればほぼ全て対応可能です。
+              </p>
+
+              <p>
+                また、
+                <span className="font-semibold">アイカ工業のメラミン化粧板</span>
+                も取り扱っており、色・質感・特徴の異なる豊富な素材の中から、
+                お客様のお好みに合わせて
+                <span className="font-semibold">完全オーダーメイド</span>
+                の建具・家具を製作いたします。
+              </p>
+
+              {/* 強みリスト */}
+              <div className="mt-4 grid gap-3 text-sm">
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
+                  <p>既製品では叶わない、寸法ぴったり・空間に馴染む建具・家具のご提案。</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
+                  <p>小さな工房だからこそできる、柔軟な相談と細やかな仕様決め。</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
+                  <p>「壊れたから直したい」「今の暮らしに合わせて造り替えたい」という修繕・リフォームにも対応。</p>
+                </div>
+              </div>
+
+              {/* 職人プロフィール風ボックス */}
+              <div className="mt-6 border-l-4 border-gray-700 pl-4 text-sm text-gray-700 bg-white/70 rounded-md py-3 shadow-[0_0_0_1px_rgba(148,163,184,0.2)]">
+                <p className="font-semibold mb-1">職人よりひと言</p>
+                <p>
+                  「長く使っていただけるか」「毎日触って気持ちがいいか」。
+                  図面には表れない部分こそ、いちばん大事だと思っています。
+                  気になることやご希望は、どんな小さなことでも遠慮なくお聞かせください。
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div > */}
+      </section>
 
-      {/* <section className="rounded-xl inset-0 p-7 my-12 mx-4 h-[408px] md:mx-auto max-w-7xl bg-no-repeat bg-cover bg-center" */}
-      {/*   style={{ backgroundImage: "url('/bg-shokunin.jpg')" }}> */}
-      {/*   <div className="absolute inset-0 bg-white bg-opacity-50 rounded-xl"></div> */}
-      {/* </section> */}
-      {/**/}
+      <hr className="border-gray-300 my-12" />
+
+      <section className="relative max-w-6xl mx-auto px-6 py-20">
+        {/* 背景の淡いグラデーション */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white -z-10 rounded-xl"></div>
+
+        <h2 className="text-3xl font-bold text-center mb-12">
+          施工内容
+        </h2>
+
+        {/* 装飾ライン */}
+        <div className="h-1 w-20 bg-gray-700 mx-auto rounded-full mb-12"></div>
+
+        <div className="grid md:grid-cols-3 gap-10">
+
+          {/* ----- 建具の製作・交換 ----- */}
+          <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+            <div className="mx-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 text-gray-700 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M3 4h18M3 12h18M3 20h18" />
+              </svg>
+            </div>
+            <h3 className="font-bold text-xl mb-3">建具の製作・交換</h3>
+            <p className="text-gray-600 leading-relaxed">
+              引き戸・開き戸・障子・ふすま・框戸など、
+              <br />
+              ご希望に合わせて丁寧に製作いたします。
+            </p>
+          </div>
+
+          {/* ----- 造作家具 ----- */}
+          <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+            <div className="mx-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 text-gray-700 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M3 7h18M3 12h18M3 17h18" />
+              </svg>
+            </div>
+            <h3 className="font-bold text-xl mb-3">造作家具</h3>
+            <p className="text-gray-600 leading-relaxed">
+              カップボード・収納棚・TVボード・吊り戸棚など、
+              <br />
+              住まいに合わせてオーダーメイド製作。
+            </p>
+          </div>
+
+          {/* ----- 素材 ----- */}
+          <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+            <div className="mx-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 text-gray-700 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </div>
+            <h3 className="font-bold text-xl mb-3">取り扱い素材</h3>
+            <p className="text-gray-600 leading-relaxed">
+              アイカ工業のメラミン化粧板、無垢材、集成材など
+              <br />
+              素材を自由にお選びいただけます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-gray-300 my-12" />
+
+      {/* ----- 対応エリア ----- */}
       <section className="bg-gray-100 rounded-xl p-8 my-12 mx-4 md:mx-auto max-w-7xl text-center">
-        <h2 className="text-2xl font-bold mb-2">Area</h2>
+        <h2 className="text-2xl font-bold mb-2">対応エリア</h2>
         <p className="text-lg font-bold mb-6">愛知県　名古屋市</p>
 
         <div className="text-gray-800 space-y-2 leading-relaxed">
@@ -53,35 +192,25 @@ export default function Page() {
         </div>
 
         <p className="text-xs text-gray-500 mt-6">
-          ※弊社の工事混雑状況により、施工できない場合があります。
+          ※工事状況により、施工をお受けできない場合があります。
         </p>
-        <hr className="border-black mb-8" />
-        {/* 工事内容タイトル */}
-        <h2 className="text-center text-xl font-bold mb-10">施工内容</h2>
+      </section>
 
-        {/* 新築及びリフォーム外構・エクステリア工事 */}
-        <div className="text-center space-y-2 mb-8">
-          <h3 className="font-bold">【建具】</h3>
-          <p>引き戸、開戸</p>
-        </div>
+      <hr className="border-gray-300 my-12" />
 
-        {/* エクステリア製品工事 */}
-        <div className="text-center space-y-2 mb-8">
-          <h3 className="font-bold">【造作家具】</h3>
-          <p>カップボード、収納棚</p>
-        </div>
+      {/* ----- CTA ----- */}
+      <section className="max-w-4xl mx-auto text-center px-6 py-20">
+        <h2 className="text-3xl font-bold mb-6">ご相談・お見積もりは無料です</h2>
+        <p className="text-gray-700 mb-8">
+          建具の交換・リフォーム・オーダー家具のご相談など、まずはお気軽にお問い合わせください。
+        </p>
 
-        {/* ウッドデッキ工事 */}
-        <div className="text-center space-y-2 mb-8">
-          <h3 className="font-bold">【取り扱いメーカー】</h3>
-          <p>アイカ工業</p>
-        </div>
-
-        <div className="text-center space-y-2">
-          <h3 className="font-bold">【仮】</h3>
-          <p>etc</p>
-        </div>
-
+        <a
+          href="/contact"
+          className="inline-block bg-gray-900 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-black transition"
+        >
+          お問い合わせはこちら
+        </a>
       </section>
     </main>
   );
