@@ -104,7 +104,7 @@ export default function AnimatedHeroImage({
           >
             <Link
               href="/contact"
-              className="inline-block bg-white/90 text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white hover:scale-105 transition-transform duration-300"
+              className="inline-block bg-brand text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-white hover:scale-105 transition-transform duration-300"
             >
               無料お見積もり
             </Link>

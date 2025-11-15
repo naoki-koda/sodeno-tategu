@@ -32,7 +32,7 @@ export default function Page() {
             {/* 右：テキストエリア */}
             <div className="space-y-6 text-gray-700 leading-relaxed">
               {/* 小ラベル */}
-              <span className="inline-flex items-center rounded-full bg-gray-900 text-white text-xs px-3 py-1 tracking-[0.2em] uppercase">
+              <span className="inline-flex items-center rounded-full bg-brand text-white text-xs px-3 py-1 tracking-[0.2em] uppercase">
                 ABOUT
               </span>
 
@@ -207,7 +207,7 @@ export default function Page() {
 
         <a
           href="/contact"
-          className="inline-block bg-gray-900 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-black transition"
+          className="inline-block bg-brand text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-black transition"
         >
           お問い合わせはこちら
         </a>

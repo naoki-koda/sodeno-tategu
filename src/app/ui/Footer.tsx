@@ -9,10 +9,10 @@ export default function Footer() {
         <h2 className="mb-2">SODENO TATEGU</h2>
         <div className="flex items-center justify-center gap-2 mb-3">
           <Image
-            src="/favicon.ico"
+            src="/ico_black.png"
             alt="Site Icon"
-            width={37}
-            height={37}
+            width={36}
+            height={36}
             className="align-middle"
           />
           <p className={`text-lg ${kosugiMaru.className}`}>袖野建具店</p>

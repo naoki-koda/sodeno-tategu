@@ -15,7 +15,7 @@ export default function FaqPage() {
             src="/topimage.webp"
             alt="よくあるご質問"
             companyName="よくあるご質問"
-            // slogan="住まいに馴染む、美しい建具を"
+            slogan=""
             logoSrc="/logoandtext.png"
         />
       <section className="mx-auto max-w-4xl px-4 md:px-6">
