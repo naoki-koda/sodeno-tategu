@@ -2,38 +2,24 @@
 
 import AnimatedHeroImage from '@/app/ui/HeroBock';
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
 
 export default function FaqPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-        <AnimatedHeroImage
-            src="/topimage.webp"
-            alt="よくあるご質問"
-            companyName="よくあるご質問"
-            slogan=""
-            logoSrc="/logoandtext.png"
-        />
-      <section className="mx-auto max-w-4xl px-4 md:px-6">
-        {/* 見出し */}
-        {/* <header className="mb-10 text-center">
-          <p className="text-xs font-semibold tracking-[0.3em] text-slate-500">
-            FAQ
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            よくあるご質問
-          </h1>
-          <p className="mt-4 text-sm text-slate-600 md:text-base">
-            袖野建具店に寄せられるご質問をまとめました。
-            掲載のない内容についても、お気軽にお問い合わせください。
-          </p>
-        </header> */}
-        {/* アコーディオン */}
-        <div className="rounded-xl bg-white p-4 shadow-sm md:p-6">
+    <main className="min-h-screen bg-slate-50 mb-12">
+      <AnimatedHeroImage
+          src="/topimage.webp"
+          alt="よくあるご質問"
+          companyName="よくあるご質問"
+          slogan=""
+          logoSrc="/logoandtext.png"
+      />
+      <section className="mx-auto max-w-4xl px-4 md:px-6 pa-6">
+        <div className="rounded-xl mt-12 mb -12 bg-white p-4 shadow-sm md:p-6">
           <Accordion type="single" collapsible className="w-full space-y-2">
             <AccordionItem value="item-1">
               <AccordionTrigger>

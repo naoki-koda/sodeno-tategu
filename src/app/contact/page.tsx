@@ -2,7 +2,7 @@ import ContactForm from '@/app/ui/contact/contact-form';
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12">
+    <main className="mx-auto max-w-3xl px-4 py-12 bg-slate-50">
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">お問い合わせ</h1>
         <p className="mt-4 text-sm text-slate-600">
