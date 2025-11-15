@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+import Footer from '@/app/ui/Footer';
+import Header from '@/app/ui/Header';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from '@/app/ui/Header'
-import Footer from '@/app/ui/Footer'
 
 
 export const metadata = {
@@ -20,7 +19,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://sodeno-tategu.com/ogp.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "袖野建具店の建具施工事例",
