@@ -5,7 +5,7 @@ import {
   Bars3Icon,
   BookOpenIcon,
   BuildingOffice2Icon,
-  CurrencyDollarIcon, EnvelopeIcon,
+  EnvelopeIcon,
   HomeIcon,
   WrenchIcon,
   XMarkIcon
@@ -38,12 +38,6 @@ const NAV_ITEMS = [
     label: 'Q&A',
     subLabel: 'よくあるご質問',
     icon: BookOpenIcon,
-  },
-  {
-    href: '/price',
-    label: 'PRICE',
-    subLabel: '料金について',
-    icon: CurrencyDollarIcon,
   },
   {
     href: '/contact',

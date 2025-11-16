@@ -14,14 +14,40 @@ export default function FaqPage() {
       <AnimatedHeroImage
           src="/topimage.webp"
           alt="よくあるご質問"
-          companyName="よくあるご質問"
-          slogan=""
+          companyName="建具とは? 造作家具とは?"
+          slogan="よくあるご質問"
           logoSrc="/logoandtext.png"
       />
       <section className="mx-auto max-w-4xl px-4 md:px-6 pa-6">
         <div className="rounded-xl mt-12 mb -12 bg-white p-4 shadow-sm md:p-6">
           <Accordion type="single" collapsible className="w-full space-y-2">
+            <AccordionItem value="item-9">
+
+              <AccordionTrigger>
+                Q. 建具とは？
+              </AccordionTrigger>
+              <AccordionContent className="text-sm leading-relaxed text-slate-700">
+                建具（たてぐ）とは、建物の開口部に取り付けられる“可動性のある仕切り”のことです。<br />
+                ドアや引き戸、障子、ふすま、格子、窓などが該当し、<br />
+                単なる開閉装置ではなく 採光・通風・断熱・防音・意匠性 といった住宅性能を左右する重要なパーツです。<br />
+                特にオーダー建具は、寸法・素材・デザイン・金物・開閉方式 を細かく調整でき、既製品では実現できない空間づくりが可能です。
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-10">
+              <AccordionTrigger>
+                Q. 造作家具とは？
+              </AccordionTrigger>
+              <AccordionContent className="text-sm leading-relaxed text-slate-700">
+                A. お部屋の寸法や使い方、収納量に合わせて一から設計・製作する<br />
+                オーダーメイドの家具のことです。<br /><br />
+                カップボード、TVボード、収納棚、デスク、洗面台など、<br />
+                市販品ではサイズやデザインが合わない場合でも、<br />
+                お客様の暮らしにぴったりと馴染む形で制作できます。
+              </AccordionContent>
+            </AccordionItem>
             <AccordionItem value="item-1">
+
               <AccordionTrigger>
                 Q. 見積もりや相談に費用はかかりますか？
               </AccordionTrigger>

@@ -17,7 +17,7 @@ export default function Page() {
                     {/* 左側：写真（後で差し替え） */}
                     <div className="relative w-full h-72 rounded-xl overflow-hidden shadow-md">
                         <Image
-                        src="/topimage.webp" // ← お好みのパスに変更してください
+                        src="/kouba.webp" // ← お好みのパスに変更してください
                         alt="袖野建具店の作業風景"
                         fill
                         className="object-cover object-center"
