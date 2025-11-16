@@ -16,7 +16,7 @@ export default function FaqPage() {
           alt="よくあるご質問"
           companyName="建具とは? 造作家具とは?"
           slogan="よくあるご質問"
-          logoSrc="/logoandtext.png"
+          logoSrc="/logotextwhite.svg"
       />
       <section className="mx-auto max-w-4xl px-4 md:px-6 pa-6">
         <div className="rounded-xl mt-12 mb -12 bg-white p-4 shadow-sm md:p-6">

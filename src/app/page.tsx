@@ -109,7 +109,7 @@ export default function Page() {
         alt="和モダンな室内"
         companyName="名古屋を拠点とする建具店"
         slogan="住まいに馴染む、美しい建具を"
-        logoSrc="/logoandtext.png"
+        logoSrc="/logotextwhite.svg"
       />
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 via-white to-gray-100 shadow-sm border border-gray-100">

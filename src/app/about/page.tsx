@@ -9,7 +9,7 @@ export default function Page() {
                 alt="会社案内"
                 companyName="会社案内"
                 slogan=""
-                logoSrc="/logoandtext.png"
+                logoSrc="/logotextwhite.svg"
             />
             <section className="max-w-5xl mx-auto px-6 py-16">
                 <div className="grid md:grid-cols-2 gap-12 items-center">

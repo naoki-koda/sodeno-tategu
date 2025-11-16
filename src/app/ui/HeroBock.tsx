@@ -80,7 +80,7 @@ export default function AnimatedHeroImage({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-sm md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
+            className="text-lg md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
           >
             {companyName}
           </motion.h1>

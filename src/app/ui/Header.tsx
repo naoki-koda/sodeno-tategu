@@ -7,7 +7,6 @@ import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   HomeIcon,
-  WrenchIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -17,31 +16,31 @@ import { useState } from 'react';
 const NAV_ITEMS = [
   {
     href: '/',
-    label: 'Top',
+    label: 'トップページ',
     subLabel: 'トップページ',
     icon: HomeIcon,
   },
   {
     href: '/about',
-    label: 'ABOUTUS',
+    label: '会社案内',
     subLabel: '会社案内',
     icon: BuildingOffice2Icon,
   },
-  {
-    href: '/works',
-    label: 'WORKS',
-    subLabel: '制作事例',
-    icon: WrenchIcon,
-  },
+  // {
+  //   href: '/works',
+  //   label: 'WORKS',
+  //   subLabel: '制作事例',
+  //   icon: WrenchIcon,
+  // },
   {
     href: '/faq',
-    label: 'Q&A',
+    label: 'よくあるご質問',
     subLabel: 'よくあるご質問',
     icon: BookOpenIcon,
   },
   {
     href: '/contact',
-    label: 'CONTACT',
+    label: 'お問い合わせ',
     subLabel: 'お問い合わせ',
     icon: EnvelopeIcon,
   },
@@ -53,8 +52,8 @@ export default function Header() {
       <header className={`relative sticky top-0 z-30 bg-zinc-800 text-white p-4`}>
         <div className="mx-auto flex h-full max-w-5xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3 text-teal-950">
-            <Image src="/ico_white.ico" alt="Site Icon" width={50} height={50} className="rounded-lg" />
-            <Image src="/logotext.svg" alt="Site Icon" width={125} height={125} />
+            {/* <Image src="/ico_white.ico" alt="Site Icon" width={50} height={50} className="rounded-lg" /> */}
+            <Image src="/logotext.svg" alt="Site Icon" width={200} height={200} />
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-semibold text-gray-100 md:flex">
             {NAV_ITEMS.map(({ href, subLabel }) => (
@@ -82,7 +81,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <nav
-          className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-gray-800 px-6 pb-12 pt-8 text-teal-950 md:hidden font-jp`}
+          className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-zinc-800 px-6 pb-12 pt-8 text-teal-950 md:hidden font-jp`}
         >
           <div className="mx-auto w-full max-w-sm flex-1 space-y-6 overflow-y-auto">
             <div className="flex items-center justify-between text-white">

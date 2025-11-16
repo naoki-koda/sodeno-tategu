@@ -1,28 +1,69 @@
 import Footer from '@/app/ui/Footer';
 import Header from '@/app/ui/Header';
+import { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from 'next/script';
 import "./globals.css";
 
+const SITE_URL = 'https://sodeno-tategu.com';
+const DEFAULT_TITLE = '袖野建具店｜愛知・名古屋・熱田区の老舗建具店';
+const DEFAULT_DESCRIPTION =
+  '愛知県名古屋市熱田区で創業70年以上。障子・襖・木製建具の製作・修理・張り替えは袖野建具店へ。';
 
-export const metadata = {
-  title: "袖野建具店｜愛知・名古屋・熱田区の老舗建具店",
-  description: "愛知県名古屋市熱田区で創業70年以上。障子・襖・木製建具の製作・修理・張り替えは袖野建具店へ。",
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: '袖野建具店',
+  title: {
+    default: DEFAULT_TITLE,
+    template: '%s｜袖野建具店',
+  },
+  description: DEFAULT_DESCRIPTION,
   keywords: [
-    "建具", "建具店", "名古屋", "熱田区", "愛知", "襖", "障子", "木製建具", "リフォーム", "老舗"
+    '建具',
+    '建具店',
+    '名古屋',
+    '熱田区',
+    '愛知',
+    '襖',
+    '障子',
+    '木製建具',
+    'リフォーム',
+    '老舗',
   ],
+  category: 'HomeAndConstruction',
+  authors: [{ name: '袖野建具店' }],
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      'ja-JP': SITE_URL,
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
   icons: {
     icon: "/ico_black.ico",
+    apple: "/ico_black.ico",
   },
   openGraph: {
-    title: "袖野建具店｜愛知・名古屋・熱田区の老舗建具店",
-    description: "名古屋市熱田区で建具の製作・修理・張替えを行う老舗建具店。木の温もりを活かした職人技をご提供。",
-    url: "https://sodeno-tategu.com",
+    title: DEFAULT_TITLE,
+    description:
+      '名古屋市熱田区で建具の製作・修理・張替えを行う老舗建具店。木の温もりを活かした職人技をご提供。',
+    url: SITE_URL,
     siteName: "袖野建具店",
     locale: "ja_JP",
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "袖野建具店の建具施工事例",
@@ -33,7 +74,35 @@ export const metadata = {
     card: "summary_large_image",
     title: "袖野建具店｜名古屋の老舗建具店",
     description: "障子・襖・木製建具の製作・修理は名古屋・熱田区の袖野建具店へ。",
-    images: ["https://sodeno-tategu.com/ogp.jpg"],
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: '袖野建具店',
+  url: SITE_URL,
+  image: `${SITE_URL}/og-image.jpg`,
+  logo: `${SITE_URL}/logoandtext.png`,
+  description: DEFAULT_DESCRIPTION,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '愛知県名古屋市熱田区五番町7-6',
+    addressLocality: '名古屋市熱田区',
+    addressRegion: '愛知県',
+    postalCode: '456-0058',
+    addressCountry: 'JP',
+  },
+  areaServed: ['名古屋市', '愛知県'],
+  makesOffer: {
+    '@type': 'Offer',
+    itemOffered: [
+      { '@type': 'Service', name: '建具製作' },
+      { '@type': 'Service', name: '建具修理' },
+      { '@type': 'Service', name: '障子・襖の張り替え' },
+      { '@type': 'Service', name: '造作家具製作' },
+    ],
   },
 };
 
@@ -58,10 +127,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {/* <main className="max-w-6xl mx-auto p-4"> */}
-        <main className="mx-auto">
+          <Script
+            id="structured-data-organization"
+            type="application/ld+json"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
           {children}
-        </main>
         <Footer />
       </body>
     </html>
