@@ -118,7 +118,7 @@ export default function Page() {
             <div className="relative">
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-md bg-gray-200">
                 <Image
-                  src="/kouba.webp" // ← お好みのパスに変更してください
+                  src="/kouba.webp"
                   alt="袖野建具店の作業風景"
                   fill
                   className="object-cover object-center"
@@ -204,121 +204,129 @@ export default function Page() {
         </h2>
         {/* 装飾ライン */}
         <div className="w-20 bg-gray-700 mx-auto rounded-full mb-12"></div>
-
-        <div className="grid md:grid-cols-3">
-          {
-            products.map((item, index) => (
-              <Dialog key={index}>
-                <DialogTrigger asChild>
-                  <button className="inline-block rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
-                    <Image
-                      src={item.icon}
-                      alt={item.alt}
-                      width={512}
-                      height={512}
-                      className="object-cover w-full aspect-square hover:opacity-90 transition"
-                    />
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[1200px]">
-                  <DialogHeader>
-                    <DialogTitle>{item.title}</DialogTitle>
-                    <div
-                      className="
-                        flex flex-col md:flex-row
-                        items-start gap-5 p-4 rounded-xl bg-white shadow-sm border border-gray-200
-                      ">
-                      <Image
-                        src={item.icon}
-                        alt={item.alt}
-                        height="512"
-                        width="512">
-
-                      </Image>
-                      <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-                        <p>{item.description}</p>
-
-                        <ul className="list-disc pl-5 space-y-1">
-                          {item.points.map((p, index) => (
-                            <li key={index}>
-                              {p}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </DialogHeader>
-                </DialogContent>
-            </Dialog>
-            ))
-          }
-
-          {/* ----- 建具の製作・交換 ----- */}
-          {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+        <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
             <div className="mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-gray-700 mx-auto"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                  d="M3 4h18M3 12h18M3 20h18" />
-              </svg>
-            </div>
-            <h3 className="font-bold text-xl mb-3">建具の製作・交換</h3>
-            <p className="text-gray-600 leading-relaxed">
-              引き戸・開き戸・障子・ふすま・框戸など、
-              <br />
-              ご希望に合わせて丁寧に製作いたします。
-            </p>
-          </div> */}
+                <p className="text-gray-600 leading-relaxed">
+                  引き戸・開き戸・障子・ふすま・框戸など、
+                  <br />
+                  ご希望に合わせて丁寧に製作いたします。
+                </p>
+              <div className="grid grid-cols-3">
+                {
+                  products.map((item, index) => (
+                    <Dialog key={index}>
+                      <DialogTrigger asChild>
+                        <button className="inline-block rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+                          <Image
+                            src={item.icon}
+                            alt={item.alt}
+                            width={512}
+                            height={512}
+                            className="object-cover w-full aspect-square hover:opacity-90 transition"
+                          />
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[1200px]">
+                        <DialogHeader>
+                          <DialogTitle>{item.title}</DialogTitle>
+                          <div
+                            className="
+                              flex flex-col md:flex-row
+                              items-start gap-5 p-4 rounded-xl bg-white shadow-sm border border-gray-200
+                            ">
+                            <Image
+                              src={item.icon}
+                              alt={item.alt}
+                              height="512"
+                              width="512">
 
-          {/* ----- 造作家具 ----- */}
-          {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
-            <div className="mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-gray-700 mx-auto"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                  d="M3 7h18M3 12h18M3 17h18" />
-              </svg>
-            </div>
-            <h3 className="font-bold text-xl mb-3">造作家具</h3>
-            <p className="text-gray-600 leading-relaxed">
-              カップボード・収納棚・TVボード・吊り戸棚など、
-              <br />
-              住まいに合わせてオーダーメイド製作。
-            </p>
-          </div> */}
+                            </Image>
+                            <div className="mt-4 space-y-3 text-sm text-muted-foreground">
+                              <p>{item.description}</p>
 
-          {/* ----- 素材 ----- */}
-          {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
-            <div className="mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-gray-700 mx-auto"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+                              <ul className="list-disc pl-5 space-y-1">
+                                {item.points.map((p, index) => (
+                                  <li key={index}>
+                                    {p}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </DialogHeader>
+                      </DialogContent>
+                  </Dialog>
+                  ))
+                }
+
+                {/* ----- 建具の製作・交換 ----- */}
+                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+                  <div className="mx-auto mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10 text-gray-700 mx-auto"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                        d="M3 4h18M3 12h18M3 20h18" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-xl mb-3">建具の製作・交換</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    引き戸・開き戸・障子・ふすま・框戸など、
+                    <br />
+                    ご希望に合わせて丁寧に製作いたします。
+                  </p>
+                </div> */}
+
+                {/* ----- 造作家具 ----- */}
+                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+                  <div className="mx-auto mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10 text-gray-700 mx-auto"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                        d="M3 7h18M3 12h18M3 17h18" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-xl mb-3">造作家具</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    カップボード・収納棚・TVボード・吊り戸棚など、
+                    <br />
+                    住まいに合わせてオーダーメイド製作。
+                  </p>
+                </div> */}
+
+                {/* ----- 素材 ----- */}
+                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+                  <div className="mx-auto mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10 text-gray-700 mx-auto"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                        d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-xl mb-3">取り扱い素材</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    アイカ工業のメラミン化粧板、無垢材、集成材など
+                    <br />
+                    素材を自由にお選びいただけます。
+                  </p>
+                </div> */}
+              </div>
             </div>
-            <h3 className="font-bold text-xl mb-3">取り扱い素材</h3>
-            <p className="text-gray-600 leading-relaxed">
-              アイカ工業のメラミン化粧板、無垢材、集成材など
-              <br />
-              素材を自由にお選びいただけます。
-            </p>
-          </div> */}
-        </div>
+          </div>
       </section>
 
       <hr className="border-gray-300 my-12" />

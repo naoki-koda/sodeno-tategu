@@ -6,8 +6,8 @@ export default function Page() {
         <main className="bg-slate-50">
             <AnimatedHeroImage
                 src="/topimage.webp"
-                alt="会社案内"
-                companyName="会社案内"
+                alt="事業所案内"
+                companyName="事業所案内"
                 slogan=""
                 logoSrc="/logotextwhite.svg"
             />
@@ -49,9 +49,8 @@ export default function Page() {
                     </div>
                 </div>
 
-                {/* 会社情報 */}
                 <div className="bg-white shadow-md rounded-xl p-8 mt-16">
-                    <h3 className="text-xl font-bold mb-6 text-center">会社情報</h3>
+                    <h3 className="text-xl font-bold mb-6 text-center">事業所情報</h3>
 
                     <div className="space-y-4 text-gray-800">
 

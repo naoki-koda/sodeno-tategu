@@ -75,10 +75,9 @@ export default function AnimatedHeroImage({
             />
           </motion.div>
 
-          {/* 会社名 */}
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 30 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-lg md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
           >
@@ -88,7 +87,7 @@ export default function AnimatedHeroImage({
           {/* キャッチコピー */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 30 }}
             transition={{ delay: 1.0, duration: 0.8 }}
             className="text-lg md:text-2xl text-white/90"
           >
@@ -97,8 +96,8 @@ export default function AnimatedHeroImage({
 
           {/* CTAボタン */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 30 }}
             transition={{ delay: 1.3, duration: 0.8 }}
             className="mt-8"
           >

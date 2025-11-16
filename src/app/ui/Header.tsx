@@ -22,8 +22,8 @@ const NAV_ITEMS = [
   },
   {
     href: '/about',
-    label: '会社案内',
-    subLabel: '会社案内',
+    label: '事業所案内',
+    subLabel: '事業所案内',
     icon: BuildingOffice2Icon,
   },
   // {
