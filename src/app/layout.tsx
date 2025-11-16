@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "袖野建具店の建具施工事例",
+        alt: "袖野建具店の会社イメージ",
       },
     ],
   },
