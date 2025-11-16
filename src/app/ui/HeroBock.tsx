@@ -33,8 +33,8 @@ export default function AnimatedHeroImage({
   alt = "",
   delay = 0,
   className = "",
-  companyName = "令和のホームページ",
-  slogan = "和モダン × シンプルデザインで、ビジネスを魅せる。",
+  companyName = "名古屋の建具店",
+  slogan = "歴史を持つ職人の技術",
   logoSrc = "",
 }: AnimatedHeroImageProps) {
   return (
@@ -80,7 +80,7 @@ export default function AnimatedHeroImage({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-4xl md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
+            className="text-sm md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
           >
             {companyName}
           </motion.h1>
