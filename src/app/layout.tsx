@@ -5,7 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 
-const SITE_URL = 'https://www.sodeno-tategu.com';
+const SITE_URL = 'https://www.sodeno-tategu.jp';
 const DEFAULT_TITLE = '袖野建具店｜愛知・名古屋・熱田区の老舗建具店';
 const DEFAULT_DESCRIPTION =
   '愛知県名古屋市熱田区で創業70年以上。障子・襖・木製建具の製作・修理・張り替えは袖野建具店へ。';
