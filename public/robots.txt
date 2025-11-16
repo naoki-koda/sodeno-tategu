@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sodeno-tategu.jp
+
+# Sitemaps
+Sitemap: https://www.sodeno-tategu.jp/sitemap.xml
