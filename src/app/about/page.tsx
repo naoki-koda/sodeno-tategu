@@ -43,7 +43,7 @@ export default function Page() {
                     </p>
 
                     <p>
-                        また、当店は <span className="font-semibold">愛知県建具共同組合</span> に所属しており、
+                        また、当店は <span className="font-semibold">愛知県建具協同組合</span> に所属しており、
                         正しい技術に基づいた確かな施工をお届けしています。
                     </p>
                     </div>
@@ -61,7 +61,7 @@ export default function Page() {
 
                     <p>
                         <span className="font-semibold">所在地：</span>
-                        〒456-0058 愛知県名古屋市熱田区五番町7-6
+                        〒456-0057 愛知県名古屋市熱田区五番町7-6
                     </p>
 
                     <p>
@@ -76,7 +76,7 @@ export default function Page() {
 
                     <p>
                         <span className="font-semibold">所属組合：</span>
-                        愛知県建具共同組合
+                        愛知県建具協同組合
                     </p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.625494044423!2d136.8894210760144!3d35.116061360812814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600379ed98bf6d8b%3A0x13275d8161e60e66!2z6KKW6YeO5bu65YW35bqX!5e0!3m2!1sja!2sjp!4v1763044612367!5m2!1sja!2sjp"
                         width="100%" height="350" style={{ border: 0 }} loading="lazy">
