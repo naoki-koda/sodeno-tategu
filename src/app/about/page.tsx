@@ -71,7 +71,7 @@ export default function Page() {
 
                     <p>
                         <span className="font-semibold">対応素材：</span>
-                        アイカ工業メラミン化粧板 / 集成材 / 無垢材 ほか
+                        メラミン化粧板 / 集成材 / 無垢材 ほか
                     </p>
 
                     <p>

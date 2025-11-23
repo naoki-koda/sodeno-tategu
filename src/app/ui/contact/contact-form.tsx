@@ -10,7 +10,6 @@ const inquiryTypes = [
   { value: 'cupboard', label: 'カップボード' },
   { value: 'syuno', label: '収納' },
   { value: 'senmen', label: '洗面化粧台' },
-  { value: 'desk', label: '造作デスク' },
   { value: 'other', label: 'その他の建具、造作家具' },
 ];
 

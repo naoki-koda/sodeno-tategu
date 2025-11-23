@@ -95,14 +95,14 @@ export default function FaqPage() {
                 はい、カップボード・収納棚・TVボード・本棚など、
                 <span className="font-semibold">完全オーダーメイドの造作家具</span>
                 を製作いたします。<br />
-                アイカ工業のメラミン化粧板をはじめ、木目・カラー・質感をお選びいただき、
+                メラミン化粧板をはじめ、木目・カラー・質感をお選びいただき、
                 お部屋に合わせたサイズ・デザインでお作りします。
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-5">
               <AccordionTrigger>
-                Q. アイカ工業のメラミン化粧板は、実物サンプルを見ることはできますか？
+                Q. メラミン化粧板は、実物サンプルを見ることはできますか？
               </AccordionTrigger>
               <AccordionContent className="text-sm leading-relaxed text-slate-700">
                 はい、カタログやサンプルを見ながらお選びいただけます。<br />

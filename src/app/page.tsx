@@ -12,6 +12,7 @@ const products = [
   {
     title: "建具(引き戸、開戸、フラッシュドア)",
     icon: "/door.webp", alt: "ドアの説明",
+    work: "/door.webp",
     description: "設置場所や使い勝手に合わせて最適な戸の種類をご提案し、寸法に合わせた完全オーダー製作を行います。",
     points: [
       "引き戸：開閉スペースを取らず、廊下や和室など省スペースに最適です。",
@@ -22,6 +23,7 @@ const products = [
   {
     title: "建具(障子)",
     icon: "/shoujiicon.webp", alt: "障子の説明",
+    work: "/workshouji.webp",
     description: "和室はもちろん、現代住宅にも調和する『和モダン』な障子を製作いたします。紙・ワーロン等素材も選択可能です。",
     points: [
       "和紙・ワーロン紙など、用途に応じた素材提案が可能です。",
@@ -32,6 +34,7 @@ const products = [
   {
     title: "建具(格子スクリーン)",
     icon: "/kousiicon.webp", alt: "格子スクリーンの説明",
+    work: "/kousiicon.webp",
     description: "和の意匠性を活かしつつ、空間の間仕切りやインテリアとして人気の格子デザインもオーダー対応可能です。",
     points: [
       "視線を遮りながらも、光と風を通す構造です。",
@@ -42,6 +45,7 @@ const products = [
   {
     title: "造作玄関収納",
     icon: "/genkanicon.webp", alt: "玄関収納の説明",
+    work: "/genkanicon.webp",
     description: "間取りや収納量に合わせて、玄関をすっきり保つ造作収納を製作します。",
     points: [
       "靴・傘・小物を用途別に整理できる設計が可能です。",
@@ -52,6 +56,7 @@ const products = [
   {
     title: "造作収納",
     icon: "/shunoicon.webp", alt: "収納の説明",
+    work: "/workshuno.webp",
     description: "既製品では収まらないスペースに、ミリ単位で設計された収納家具を製作します。",
     points: [
       "デッドスペースを有効活用し、住まいの収納力を向上します。",
@@ -62,6 +67,7 @@ const products = [
   {
     title: "造作ロッカー",
     icon: "/rockericon.webp", alt: "造作ロッカーの説明",
+    work: "/rockericon.webp",
     description: "学校・オフィス・店舗・スポーツ施設など用途に応じた耐久性あるロッカーをお作りします。",
     points: [
       "鍵・ダイヤル式・取手など機能面の選択が可能です。",
@@ -72,16 +78,18 @@ const products = [
   {
     title: "造作カップボード",
     icon: "/cupboardicon.webp", alt: "カップボードの説明",
+    work: "/cupboardicon.webp",
     description: "キッチンに美しく調和し、無駄のない収納動線を作るオーダーカップボードを製作します。",
     points: [
       "天井までの大型設計で収納力を最大化します。",
       "引き出し・可動棚・ゴミ箱スペースなどを自由設計できます。",
-      "アイカ工業メラミン化粧板対応で汚れや傷にも強い仕上がりに。",
+      "メラミン化粧板対応で汚れや傷にも強い仕上がりに。",
     ],
   },
   {
     title: "造作デスク",
     icon: "/deskicon.webp", alt: "造作デスクの説明",
+    work: "/deskicon.webp",
     description: "ワークスペースや子ども部屋に合わせ、サイズと仕様を最適化したデスクを製作します。",
     points: [
       "PC配線やコード収納を考慮した設計が可能です。",
@@ -92,6 +100,7 @@ const products = [
   {
     title: "造作洗面",
     icon: "/senmen.webp", alt: "造作洗面の説明",
+    work: "/enmen.webp",
     description: "洗面ボウルや有孔板収納、ホテルライクなデザインなど希望に合わせて提案いたします。",
     points: [
       "素材はメラミン・無垢材などから選べます。",
@@ -156,7 +165,7 @@ export default function Page() {
 
               <p>
                 また、
-                <span className="font-semibold">アイカ工業のメラミン化粧板</span>
+                <span className="font-semibold">メラミン化粧板</span>
                 も取り扱っており、色・質感・特徴の異なる豊富な素材の中から、
                 お客様のお好みに合わせて
                 <span className="font-semibold">完全オーダーメイド</span>
@@ -235,7 +244,7 @@ export default function Page() {
                               items-start gap-5 p-4 rounded-xl bg-white shadow-sm border border-gray-200
                             ">
                             <Image
-                              src={item.icon}
+                              src={item.work}
                               alt={item.alt}
                               height="512"
                               width="512">
@@ -317,12 +326,6 @@ export default function Page() {
                         d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                   </div>
-                  <h3 className="font-bold text-xl mb-3">取り扱い素材</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    アイカ工業のメラミン化粧板、無垢材、集成材など
-                    <br />
-                    素材を自由にお選びいただけます。
-                  </p>
                 </div> */}
               </div>
             </div>
@@ -345,7 +348,7 @@ export default function Page() {
         </div>
 
         <p className="text-xs text-gray-500 mt-6">
-          ※工事状況により、施工をお受けできない場合があります。
+          ※工事状況により、施工をお受けできないエリアの場合があります。
         </p>
       </section>
 
