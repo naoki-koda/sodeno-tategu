@@ -1,4 +1,5 @@
 import ContactForm from '@/app/ui/contact/contact-form';
+import PrivacyPolicyContent from '@/app/ui/privacy-policy';
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       </header>
 
       <ContactForm />
+      <PrivacyPolicyContent />
     </main>
   );
 }
