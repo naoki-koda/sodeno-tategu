@@ -6,16 +6,16 @@ import Script from 'next/script';
 import "./globals.css";
 
 const SITE_URL = 'https://www.sodeno-tategu.jp';
-const DEFAULT_TITLE = '袖野建具店｜愛知・名古屋・熱田区の老舗建具店';
+const DEFAULT_TITLE = '名古屋の建具店・造作家具なら袖野建具店｜熱田区の老舗';
 const DEFAULT_DESCRIPTION =
-  '愛知県名古屋市熱田区で創業70年以上。障子・襖・木製建具の製作・修理・張り替えは袖野建具店へ。';
+  '愛知県名古屋市熱田区で創業70年以上の建具店。障子・襖・木製建具の製作・修理・張り替えや造作家具のご相談は袖野建具店へ。名古屋市内・近郊に対応。';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: '袖野建具店',
   title: {
     default: DEFAULT_TITLE,
-    template: '%s｜袖野建具店',
+    template: '%s｜名古屋の建具店 袖野建具店',
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
@@ -101,7 +101,7 @@ const organizationSchema = {
       { '@type': 'Service', name: '建具製作' },
       { '@type': 'Service', name: '建具修理' },
       { '@type': 'Service', name: '障子・襖の張り替え' },
-      { '@type': 'Service', name: '造作家具製作' },
+      { '@type': 'Service', name: '造作家具製作' }, 
     ],
   },
 };

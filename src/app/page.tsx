@@ -116,7 +116,7 @@ export default function Page() {
       <AnimatedHeroImage
         src="/topimage.webp"
         alt="和モダンな室内"
-        companyName="名古屋を拠点とする建具店"
+        companyName="名古屋の建具店・造作家具のことなら"
         slogan="住まいに馴染む、美しい建具を"
         logoSrc="/logotextwhite.svg"
       />
@@ -146,7 +146,7 @@ export default function Page() {
               </span>
 
               <h2 className="text-3xl font-bold mt-2">
-                袖野建具店について
+                創業70年以上。<br/>名古屋市で木製建具と<br/>造作家具を手がける老舗の建具店
               </h2>
 
               <p>
@@ -209,7 +209,9 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white -z-10 rounded-xl"></div>
 
         <h2 className="text-3xl font-bold text-center mb-12">
-          施工内容
+          建具製作、<br/>
+          修理から造作家具まで、
+          <br/>職人が一つひとつ丁寧に対応
         </h2>
         {/* 装飾ライン */}
         <div className="w-20 bg-gray-700 mx-auto rounded-full mb-12"></div>
@@ -336,7 +338,7 @@ export default function Page() {
 
       {/* ----- 対応エリア ----- */}
       <section className="bg-gray-100 rounded-xl p-8 my-12 mx-4 md:mx-auto max-w-7xl text-center">
-        <h2 className="text-2xl font-bold mb-2">対応エリア</h2>
+        <h2 className="text-2xl font-bold mb-2">名古屋市全域・愛知県近郊の建具工事・造作家具に対応</h2>
         <p className="text-lg font-bold mb-6">愛知県　名古屋市</p>
 
         <div className="text-gray-800 space-y-2 leading-relaxed">
