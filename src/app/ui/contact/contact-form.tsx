@@ -128,7 +128,7 @@ export default function ContactForm() {
               id="phone"
               name="phone"
               type="tel"
-              placeholder="例：03-1234-5678"
+              placeholder="例：03012345678"
               className="w-full rounded border border-slate-200 px-4 py-3 text-sm shadow-sm placeholder:text-slate-400 focus:border-slate-400 focus:outline-none"
               defaultValue={state.values?.phone ?? ''}
             />
