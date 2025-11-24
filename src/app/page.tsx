@@ -358,7 +358,7 @@ export default function Page() {
 
       {/* ----- CTA ----- */}
       <section className="max-w-4xl mx-auto text-center px-6 py-20">
-        <h2 className="text-3xl font-bold mb-6">ご相談・お見積もりは無料です</h2>
+        <h2 className="text-xl md:text-3xl font-bold mb-6">ご相談・お見積もりは無料です</h2>
         <p className="text-gray-700 mb-8">
           建具の交換・リフォーム・オーダー家具のご相談など、まずはお気軽にお問い合わせください。
         </p>
