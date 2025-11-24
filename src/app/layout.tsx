@@ -49,10 +49,13 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  icons: {
-    icon: "/ico_black.ico",
-    apple: "/ico_black.ico",
-  },
+icons: {
+  icon: [
+    { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+    { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+  ],
+  apple: '/apple-touch-icon.png',
+},
   openGraph: {
     title: DEFAULT_TITLE,
     description:
