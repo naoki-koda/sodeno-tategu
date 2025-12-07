@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const SITE_URL = 'https://www.sodeno-tategu.jp';
 const DEFAULT_TITLE = '名古屋の建具店・造作家具なら袖野建具店｜熱田区の老舗';
@@ -139,6 +140,7 @@ export default function RootLayout({
         />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
