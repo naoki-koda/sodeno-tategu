@@ -49,13 +49,14 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-icons: {
-  icon: [
-    { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
-    { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
-  ],
-  apple: '/apple-touch-icon.png',
-},
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: DEFAULT_TITLE,
     description:
@@ -104,7 +105,7 @@ const organizationSchema = {
       { '@type': 'Service', name: '建具製作' },
       { '@type': 'Service', name: '建具修理' },
       { '@type': 'Service', name: '障子・襖の張り替え' },
-      { '@type': 'Service', name: '造作家具製作' }, 
+      { '@type': 'Service', name: '造作家具製作' },
     ],
   },
 };
@@ -130,13 +131,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-          <Script
-            id="structured-data-organization"
-            type="application/ld+json"
-            strategy="beforeInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-          />
-          {children}
+        <Script
+          id="structured-data-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {children}
         <Footer />
       </body>
     </html>
