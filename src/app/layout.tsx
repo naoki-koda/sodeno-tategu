@@ -1,69 +1,57 @@
-import Footer from '@/app/ui/Footer';
-import Header from '@/app/ui/Header';
-import { Metadata } from 'next';
+import Footer from "@/app/ui/Footer";
+import Header from "@/app/ui/Header";
+import { Analytics } from "@vercel/analytics/next";
+import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from 'next/script';
+import Script from "next/script";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
 
-const SITE_URL = 'https://www.sodeno-tategu.jp';
-const DEFAULT_TITLE = '名古屋の建具店・造作家具なら袖野建具店｜熱田区の老舗';
+const SITE_URL = "https://www.sodeno-tategu.jp";
+const SITE_NAME = "袖野建具店";
+const PHONE_NUMBER = "052-661-4970"; // 実際の電話番号に変更してください
+
+// SEO対策キーワード：名古屋 建具店, 名古屋 建具 修理, 障子 張り替え, 襖 張り替え
+const DEFAULT_TITLE =
+  "名古屋の建具店 袖野建具店｜建具の修理・製作・障子襖の張り替え";
 const DEFAULT_DESCRIPTION =
-  '愛知県名古屋市熱田区で創業70年以上の建具店。障子・襖・木製建具の製作・修理・張り替えや造作家具のご相談は袖野建具店へ。名古屋市内・近郊に対応。';
+  "名古屋市熱田区で創業70年。袖野建具店は障子・襖の張り替え、木製建具の修理・製作、造作家具の専門店です。「建具の動きが悪い」「穴が開いた」など、小さな修理から名古屋市内・近郊へ迅速に伺います。職人直営の安心価格で対応。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: '袖野建具店',
+  applicationName: SITE_NAME,
   title: {
     default: DEFAULT_TITLE,
-    template: '%s｜名古屋の建具店 袖野建具店',
+    template: `%s｜${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
-    '建具',
-    '建具店',
-    '名古屋',
-    '熱田区',
-    '愛知',
-    '襖',
-    '障子',
-    '木製建具',
-    'リフォーム',
-    '老舗',
+    "名古屋 建具店",
+    "名古屋 建具 修理",
+    "名古屋 障子 張り替え",
+    "名古屋 襖 張り替え",
+    "熱田区 建具店",
+    "木製建具 製作",
+    "造作家具 名古屋",
+    "袖野建具店",
+    "建具 調整",
   ],
-  category: 'HomeAndConstruction',
-  authors: [{ name: '袖野建具店' }],
+  category: "HomeAndConstruction",
+  authors: [{ name: SITE_NAME }],
   alternates: {
-    canonical: SITE_URL,
+    canonical: "/",
     languages: {
-      'ja-JP': SITE_URL,
+      "ja-JP": "/",
     },
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-snippet': -1,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: DEFAULT_TITLE,
-    description:
-      '名古屋市熱田区で建具の製作・修理・張替えを行う老舗建具店。木の温もりを活かした職人技をご提供。',
+    description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
-    siteName: "袖野建具店",
+    siteName: SITE_NAME,
     locale: "ja_JP",
     type: "website",
     images: [
@@ -71,51 +59,86 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "袖野建具店の事業所イメージ",
+        alt: "袖野建具店 - 名古屋の建具製作・修理の職人",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "袖野建具店｜名古屋の老舗建具店",
-    description: "障子・襖・木製建具の製作・修理は名古屋・熱田区の袖野建具店へ。",
-    images: [`${SITE_URL}/og-image.jpg`],
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [`/og-image.jpg`],
   },
 };
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HomeAndConstructionBusiness',
-  name: '袖野建具店',
+// 構造化データの強化（LocalBusiness）
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness", // 建具店に最適なカテゴリ
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
   url: SITE_URL,
+  logo: `${SITE_URL}/icon-32.png`,
   image: `${SITE_URL}/og-image.jpg`,
-  logo: `${SITE_URL}/logoandtext.png`,
   description: DEFAULT_DESCRIPTION,
+  telephone: PHONE_NUMBER,
+  priceRange: "¥30,000 - ¥1,200,000", // 目安を記載
   address: {
-    '@type': 'PostalAddress',
-    streetAddress: '愛知県名古屋市熱田区五番町7-6',
-    addressLocality: '名古屋市熱田区',
-    addressRegion: '愛知県',
-    postalCode: '456-0057',
-    addressCountry: 'JP',
+    "@type": "PostalAddress",
+    streetAddress: "五番町7-6",
+    addressLocality: "名古屋市熱田区",
+    addressRegion: "愛知県",
+    postalCode: "456-0057",
+    addressCountry: "JP",
   },
-  areaServed: ['名古屋市', '愛知県'],
-  makesOffer: {
-    '@type': 'Offer',
-    itemOffered: [
-      { '@type': 'Service', name: '建具製作' },
-      { '@type': 'Service', name: '建具修理' },
-      { '@type': 'Service', name: '障子・襖の張り替え' },
-      { '@type': 'Service', name: '造作家具製作' },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 35.116057, // 熱田区五番町付近の緯度（正確な値に調整してください）
+    longitude: 136.891996, // 熱田区五番町付近の経度
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:30",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "City", name: "Nagoya" },
+    { "@type": "AdministrativeArea", name: "Aichi" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "建具サービスメニュー",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "障子・襖の張り替え" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "木製建具の修理・調整" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "オーダーメイド建具・造作家具の製作",
+        },
+      },
     ],
   },
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -123,22 +146,23 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="ja">
+      <head>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <Script
-          id="structured-data-organization"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        {children}
+        <main>{children}</main>
         <Footer />
         <Analytics />
       </body>
