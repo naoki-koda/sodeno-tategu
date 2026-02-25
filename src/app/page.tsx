@@ -1,19 +1,21 @@
-import AnimatedHeroImage from '@/app/ui/HeroBock';
+import AnimatedHeroImage from "@/app/ui/HeroBock";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
 
 const products = [
   {
     title: "建具(引き戸、開戸、フラッシュドア)",
-    icon: "/door.webp", alt: "ドアの説明",
+    icon: "/door.webp",
+    alt: "ドアの説明",
     work: "/door.webp",
-    description: "設置場所や使い勝手に合わせて最適な戸の種類をご提案し、寸法に合わせた完全オーダー製作を行います。",
+    description:
+      "設置場所や使い勝手に合わせて最適な戸の種類をご提案し、寸法に合わせた完全オーダー製作を行います。",
     points: [
       "引き戸：開閉スペースを取らず、廊下や和室など省スペースに最適です。",
       "開き戸：気密性が高く、寝室・個室・玄関など静けさを求める場所に向いています。",
@@ -22,9 +24,11 @@ const products = [
   },
   {
     title: "建具(障子)",
-    icon: "/shoujiicon.webp", alt: "障子の説明",
+    icon: "/shoujiicon.webp",
+    alt: "障子の説明",
     work: "/workshouji.webp",
-    description: "和室はもちろん、現代住宅にも調和する『和モダン』な障子を製作いたします。紙・ワーロン等素材も選択可能です。",
+    description:
+      "和室はもちろん、現代住宅にも調和する『和モダン』な障子を製作いたします。紙・ワーロン等素材も選択可能です。",
     points: [
       "和紙・ワーロン紙など、用途に応じた素材提案が可能です。",
       "採光性と柔らかい空気感を演出し、部屋を広く見せる効果があります。",
@@ -33,9 +37,11 @@ const products = [
   },
   {
     title: "建具(格子スクリーン)",
-    icon: "/kousiicon.webp", alt: "格子スクリーンの説明",
+    icon: "/kousiicon.webp",
+    alt: "格子スクリーンの説明",
     work: "/kousiicon.webp",
-    description: "和の意匠性を活かしつつ、空間の間仕切りやインテリアとして人気の格子デザインもオーダー対応可能です。",
+    description:
+      "和の意匠性を活かしつつ、空間の間仕切りやインテリアとして人気の格子デザインもオーダー対応可能です。",
     points: [
       "視線を遮りながらも、光と風を通す構造です。",
       "住宅・店舗・旅館など幅広い空間に対応可能です。",
@@ -44,9 +50,11 @@ const products = [
   },
   {
     title: "造作玄関収納",
-    icon: "/genkanicon.webp", alt: "玄関収納の説明",
+    icon: "/genkanicon.webp",
+    alt: "玄関収納の説明",
     work: "/genkanicon.webp",
-    description: "間取りや収納量に合わせて、玄関をすっきり保つ造作収納を製作します。",
+    description:
+      "間取りや収納量に合わせて、玄関をすっきり保つ造作収納を製作します。",
     points: [
       "靴・傘・小物を用途別に整理できる設計が可能です。",
       "圧迫感を抑えたデザインで玄関の雰囲気を損ないません。",
@@ -55,9 +63,11 @@ const products = [
   },
   {
     title: "造作収納",
-    icon: "/shunoicon.webp", alt: "収納の説明",
+    icon: "/shunoicon.webp",
+    alt: "収納の説明",
     work: "/workshuno.webp",
-    description: "既製品では収まらないスペースに、ミリ単位で設計された収納家具を製作します。",
+    description:
+      "既製品では収まらないスペースに、ミリ単位で設計された収納家具を製作します。",
     points: [
       "デッドスペースを有効活用し、住まいの収納力を向上します。",
       "扉・棚板・内部仕様・取手など細部まで選択可能です。",
@@ -66,9 +76,11 @@ const products = [
   },
   {
     title: "造作ロッカー",
-    icon: "/rockericon.webp", alt: "造作ロッカーの説明",
+    icon: "/rockericon.webp",
+    alt: "造作ロッカーの説明",
     work: "/rockericon.webp",
-    description: "学校・オフィス・店舗・スポーツ施設など用途に応じた耐久性あるロッカーをお作りします。",
+    description:
+      "学校・オフィス・店舗・スポーツ施設など用途に応じた耐久性あるロッカーをお作りします。",
     points: [
       "鍵・ダイヤル式・取手など機能面の選択が可能です。",
       "繰り返しの使用や荷重に耐える頑丈な設計が可能です。",
@@ -77,9 +89,11 @@ const products = [
   },
   {
     title: "造作カップボード",
-    icon: "/cupboardicon.webp", alt: "カップボードの説明",
+    icon: "/cupboardicon.webp",
+    alt: "カップボードの説明",
     work: "/cupboardicon.webp",
-    description: "キッチンに美しく調和し、無駄のない収納動線を作るオーダーカップボードを製作します。",
+    description:
+      "キッチンに美しく調和し、無駄のない収納動線を作るオーダーカップボードを製作します。",
     points: [
       "天井までの大型設計で収納力を最大化します。",
       "引き出し・可動棚・ゴミ箱スペースなどを自由設計できます。",
@@ -88,9 +102,11 @@ const products = [
   },
   {
     title: "造作デスク",
-    icon: "/deskicon.webp", alt: "造作デスクの説明",
+    icon: "/deskicon.webp",
+    alt: "造作デスクの説明",
     work: "/deskicon.webp",
-    description: "ワークスペースや子ども部屋に合わせ、サイズと仕様を最適化したデスクを製作します。",
+    description:
+      "ワークスペースや子ども部屋に合わせ、サイズと仕様を最適化したデスクを製作します。",
     points: [
       "PC配線やコード収納を考慮した設計が可能です。",
       "L字型・壁付け・造作棚一体型などレイアウト自由です。",
@@ -99,9 +115,11 @@ const products = [
   },
   {
     title: "造作洗面",
-    icon: "/senmen.webp", alt: "造作洗面の説明",
-    work: "/enmen.webp",
-    description: "洗面ボウルや有孔板収納、ホテルライクなデザインなど希望に合わせて提案いたします。",
+    icon: "/senmen.webp",
+    alt: "造作洗面の説明",
+    work: "/senmen.webp",
+    description:
+      "洗面ボウルや有孔板収納、ホテルライクなデザインなど希望に合わせて提案いたします。",
     points: [
       "素材はメラミン・無垢材などから選べます。",
       "収納を一体化し、生活感を抑えた設計が可能です。",
@@ -146,7 +164,11 @@ export default function Page() {
               </span>
 
               <h2 className="text-3xl font-bold mt-2">
-                創業70年以上。<br/>名古屋市で木製建具と<br/>造作家具を手がける老舗の建具店
+                創業70年以上。
+                <br />
+                名古屋市で木製建具と
+                <br />
+                造作家具を手がける老舗の建具店
               </h2>
 
               <p>
@@ -176,15 +198,21 @@ export default function Page() {
               <div className="mt-4 grid gap-3 text-sm">
                 <div className="flex items-start gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
-                  <p>既製品では叶わない、寸法ぴったり・空間に馴染む建具・家具のご提案。</p>
+                  <p>
+                    既製品では叶わない、寸法ぴったり・空間に馴染む建具・家具のご提案。
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
-                  <p>小さな工房だからこそできる、柔軟な相談と細やかな仕様決め。</p>
+                  <p>
+                    小さな工房だからこそできる、柔軟な相談と細やかな仕様決め。
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-gray-700" />
-                  <p>「壊れたから直したい」「今の暮らしに合わせて造り替えたい」という修繕・リフォームにも対応。</p>
+                  <p>
+                    「壊れたから直したい」「今の暮らしに合わせて造り替えたい」という修繕・リフォームにも対応。
+                  </p>
                 </div>
               </div>
 
@@ -209,69 +237,67 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white -z-10 rounded-xl"></div>
 
         <h2 className="text-3xl font-bold text-center mb-12">
-          建具製作、<br/>
+          建具製作、
+          <br />
           修理から造作家具まで、
-          <br/>職人が一つひとつ丁寧に対応
+          <br />
+          職人が一つひとつ丁寧に対応
         </h2>
         {/* 装飾ライン */}
         <div className="w-20 bg-gray-700 mx-auto rounded-full mb-12"></div>
         <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
-            <div className="mx-auto mb-4">
-                <p className="text-gray-600 leading-relaxed">
-                  引き戸・開き戸・障子・ふすま・框戸など、
-                  <br />
-                  ご希望に合わせて丁寧に製作いたします。
-                </p>
-              <div className="grid grid-cols-3">
-                {
-                  products.map((item, index) => (
-                    <Dialog key={index}>
-                      <DialogTrigger asChild>
-                        <button className="inline-block rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
-                          <Image
-                            src={item.icon}
-                            alt={item.alt}
-                            width={512}
-                            height={512}
-                            className="object-cover w-full aspect-square hover:opacity-90 transition"
-                          />
-                        </button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-[1200px]">
-                        <DialogHeader>
-                          <DialogTitle>{item.title}</DialogTitle>
-                          <div
-                            className="
+          <div className="mx-auto mb-4">
+            <p className="text-gray-600 leading-relaxed">
+              引き戸・開き戸・障子・ふすま・框戸など、
+              <br />
+              ご希望に合わせて丁寧に製作いたします。
+            </p>
+            <div className="grid grid-cols-3">
+              {products.map((item, index) => (
+                <Dialog key={index}>
+                  <DialogTrigger asChild>
+                    <button className="inline-block rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+                      <Image
+                        src={item.icon}
+                        alt={item.alt}
+                        width={512}
+                        height={512}
+                        className="object-cover w-full aspect-square hover:opacity-90 transition"
+                      />
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[1200px]">
+                    <DialogHeader>
+                      <DialogTitle>{item.title}</DialogTitle>
+                      <div
+                        className="
                               flex flex-col md:flex-row
                               items-start gap-5 p-4 rounded-xl bg-white shadow-sm border border-gray-200
-                            ">
-                            <Image
-                              src={item.work}
-                              alt={item.alt}
-                              height="512"
-                              width="512">
+                            "
+                      >
+                        <Image
+                          src={item.work}
+                          alt={item.alt}
+                          height="512"
+                          width="512"
+                        ></Image>
+                        <div className="mt-4 space-y-3 text-sm text-muted-foreground">
+                          <p>{item.description}</p>
 
-                            </Image>
-                            <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-                              <p>{item.description}</p>
+                          <ul className="list-disc pl-5 space-y-1">
+                            {item.points.map((p, index) => (
+                              <li key={index}>{p}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              ))}
 
-                              <ul className="list-disc pl-5 space-y-1">
-                                {item.points.map((p, index) => (
-                                  <li key={index}>
-                                    {p}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </DialogHeader>
-                      </DialogContent>
-                  </Dialog>
-                  ))
-                }
-
-                {/* ----- 建具の製作・交換 ----- */}
-                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+              {/* ----- 建具の製作・交換 ----- */}
+              {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
                   <div className="mx-auto mb-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -292,8 +318,8 @@ export default function Page() {
                   </p>
                 </div> */}
 
-                {/* ----- 造作家具 ----- */}
-                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+              {/* ----- 造作家具 ----- */}
+              {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
                   <div className="mx-auto mb-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -314,8 +340,8 @@ export default function Page() {
                   </p>
                 </div> */}
 
-                {/* ----- 素材 ----- */}
-                {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
+              {/* ----- 素材 ----- */}
+              {/* <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition p-8 text-center border border-gray-100">
                   <div className="mx-auto mb-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -329,23 +355,33 @@ export default function Page() {
                     </svg>
                   </div>
                 </div> */}
-              </div>
             </div>
           </div>
+        </div>
       </section>
 
       <hr className="border-gray-300 my-12" />
 
       {/* ----- 対応エリア ----- */}
       <section className="bg-gray-100 rounded-xl p-8 my-12 mx-4 md:mx-auto max-w-7xl text-center">
-        <h2 className="text-2xl font-bold mb-2">名古屋市全域・愛知県近郊の建具工事・造作家具に対応</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          名古屋市全域・愛知県近郊の建具工事・造作家具に対応
+        </h2>
         <p className="text-lg font-bold mb-6">愛知県　名古屋市</p>
 
         <div className="text-gray-800 space-y-2 leading-relaxed">
-          <p>緑区　天白区　南区　瑞穂区　昭和区　千種区　東区　港区　中川区　熱田区　中区　名東区　守山区　中村区　西区　北区</p>
-          <p>大府市　東海市　知多市　知多郡東浦町　阿久比町　半田市　常滑市　豊明市　愛知郡東郷町　みよし市　日進市　長久手市</p>
-          <p>瀬戸市　刈谷市　知立市　豊田市　安城市　碧南市　西尾市　岡崎市　尾張旭市　春日井市　丹羽郡大口町</p>
-          <p>西春日井郡豊山町　小牧市　北名古屋市　岩倉市　稲沢市　あま市　清須市　海部郡大治町　愛西市　津島市　弥富市</p>
+          <p>
+            緑区　天白区　南区　瑞穂区　昭和区　千種区　東区　港区　中川区　熱田区　中区　名東区　守山区　中村区　西区　北区
+          </p>
+          <p>
+            大府市　東海市　知多市　知多郡東浦町　阿久比町　半田市　常滑市　豊明市　愛知郡東郷町　みよし市　日進市　長久手市
+          </p>
+          <p>
+            瀬戸市　刈谷市　知立市　豊田市　安城市　碧南市　西尾市　岡崎市　尾張旭市　春日井市　丹羽郡大口町
+          </p>
+          <p>
+            西春日井郡豊山町　小牧市　北名古屋市　岩倉市　稲沢市　あま市　清須市　海部郡大治町　愛西市　津島市　弥富市
+          </p>
           <p>一宮市　犬山市</p>
         </div>
 
@@ -358,7 +394,9 @@ export default function Page() {
 
       {/* ----- CTA ----- */}
       <section className="max-w-4xl mx-auto text-center px-6 py-20">
-        <h2 className="text-xl md:text-3xl font-bold mb-6">ご相談・お見積もりは無料です</h2>
+        <h2 className="text-xl md:text-3xl font-bold mb-6">
+          ご相談・お見積もりは無料です
+        </h2>
         <p className="text-gray-700 mb-8">
           建具の交換・リフォーム・オーダー家具のご相談など、まずはお気軽にお問い合わせください。
         </p>
