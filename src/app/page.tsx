@@ -135,12 +135,12 @@ const newsItems = [
     image: "/work_desk.jpg",
     images: [
       "/work_desk.jpg",
-      "/work_desk1.jpg",
-      "/work_desk2.jpg",
-      "/work_desk3.jpg",
-      "/work_desk4.jpg",
-      "/work_desk5.jpg",
-      "/work_desk6.jpg",
+      "/work_desk1.JPG",
+      "/work_desk2.JPG",
+      "/work_desk3.JPG",
+      "/work_desk4.JPG",
+      "/work_desk5.JPG",
+      "/work_desk6.JPG",
     ],
     alt: "工房の写真",
     detail:
