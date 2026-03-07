@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const products = [
   {
-    title: "建具(引き戸、開戸、フラッシュドア)",
+    title: "建具",
     icon: "/door.webp",
     alt: "ドアの説明",
     work: "/door.webp",
@@ -36,7 +36,7 @@ const products = [
     ],
   },
   {
-    title: "建具(格子スクリーン)",
+    title: "格子スクリーン",
     icon: "/kousiicon.webp",
     alt: "格子スクリーンの説明",
     work: "/kousiicon.webp",
@@ -88,7 +88,7 @@ const products = [
     ],
   },
   {
-    title: "造作カップボード",
+    title: "カップボード",
     icon: "/cupboardicon.webp",
     alt: "カップボードの説明",
     work: "/cupboardicon.webp",
