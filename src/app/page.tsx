@@ -133,16 +133,24 @@ const newsItems = [
     date: "2026.03.7",
     title: "造作デスクを制作しました。",
     image: "/work_desk.jpg",
-    images: ["/work_desk.jpg", "/kouba.webp"],
+    images: [
+      "/work_desk.jpg",
+      "/work_desk1.jpg",
+      "/work_desk2.jpg",
+      "/work_desk3.jpg",
+      "/work_desk4.jpg",
+      "/work_desk5.jpg",
+      "/work_desk6.jpg",
+    ],
     alt: "工房の写真",
     detail:
-      "造作デスクを製作しました。デザイン性の高いメラミン化粧板を使用し、既製品にはない一台に仕上げました。",
+      "造作デスクを製作しました。デザイン性の高いメラミン化粧板を使用し、既製品にはない一台に仕上げています。さらに、モニターアーム用の配線穴や電源ラックを設け、ワーキングデスクとしての機能性も高めました。",
   },
   {
     date: "2026.03.01",
     title: "公式サイトのお知らせ欄を公開しました",
     image: "/kouba.webp",
-    images: ["/kouba.webp", "/work_desk.jpg"],
+    images: ["/kouba.webp"],
     alt: "工房の写真",
     detail:
       "袖野建具店の最新情報をお届けするため、お知らせ欄を公開しました。今後は施工事例や営業案内などを随時更新していきます。",
@@ -281,14 +289,17 @@ export default function Page() {
               {products.map((item, index) => (
                 <Dialog key={index}>
                   <DialogTrigger asChild>
-                    <button className="inline-block rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
+                    <button className="inline-block w-full text-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 rounded-lg">
                       <Image
                         src={item.icon}
                         alt={item.alt}
                         width={512}
                         height={512}
-                        className="object-cover w-full aspect-square hover:opacity-90 transition"
+                        className="object-cover w-full aspect-square hover:opacity-90 transition rounded-lg"
                       />
+                      <p className="mb-4 text-sm font-bold text-center font-medium text-gray-800">
+                        {item.title}
+                      </p>
                     </button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[1200px]">
@@ -305,7 +316,7 @@ export default function Page() {
                           alt={item.alt}
                           height="512"
                           width="512"
-                        ></Image>
+                        />
                         <div className="mt-4 space-y-3 text-sm text-muted-foreground">
                           <p>{item.description}</p>
 
@@ -469,39 +480,41 @@ function News() {
                     <p className="text-xs text-gray-500">
                       画像をタップすると拡大表示できます。
                     </p>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {item.images.map((src, index) => (
-                        <Dialog key={`${item.title}-${src}-${index}`}>
-                          <DialogTrigger asChild>
-                            <button
-                              type="button"
-                              className="relative w-full h-44 rounded-lg overflow-hidden ring-1 ring-gray-200 hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
-                            >
-                              <Image
-                                src={src}
-                                alt={`${item.alt} ${index + 1}`}
-                                fill
-                                className="object-cover object-center"
-                              />
-                            </button>
-                          </DialogTrigger>
-                          <DialogContent className="sm:max-w-5xl">
-                            <DialogHeader>
-                              <DialogTitle className="text-base">
-                                {item.title}（画像{index + 1}）
-                              </DialogTitle>
-                            </DialogHeader>
-                            <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden">
-                              <Image
-                                src={src}
-                                alt={`${item.alt} ${index + 1}`}
-                                fill
-                                className="object-contain bg-black/90"
-                              />
-                            </div>
-                          </DialogContent>
-                        </Dialog>
-                      ))}
+                    <div className="max-h-[48vh] overflow-y-auto pr-1">
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {item.images.map((src, index) => (
+                          <Dialog key={`${item.title}-${src}-${index}`}>
+                            <DialogTrigger asChild>
+                              <button
+                                type="button"
+                                className="relative w-full h-44 rounded-lg overflow-hidden ring-1 ring-gray-200 hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+                              >
+                                <Image
+                                  src={src}
+                                  alt={`${item.alt} ${index + 1}`}
+                                  fill
+                                  className="object-cover object-center"
+                                />
+                              </button>
+                            </DialogTrigger>
+                            <DialogContent className="sm:max-w-5xl">
+                              <DialogHeader>
+                                <DialogTitle className="text-base">
+                                  {item.title}（画像{index + 1}）
+                                </DialogTitle>
+                              </DialogHeader>
+                              <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden">
+                                <Image
+                                  src={src}
+                                  alt={`${item.alt} ${index + 1}`}
+                                  fill
+                                  className="object-contain bg-black/90"
+                                />
+                              </div>
+                            </DialogContent>
+                          </Dialog>
+                        ))}
+                      </div>
                     </div>
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {item.detail}
