@@ -1,8 +1,9 @@
- 
 export default function PrivacyPolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-24">
-      <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">個人情報保護方針</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">
+        個人情報保護方針
+      </h1>
 
       <div className="max-h-96 overflow-y-scroll p-4 border rounded bg-white text-sm space-y-4 dark:text-gray-800">
         <p>
@@ -32,13 +33,19 @@ export default function PrivacyPolicyPage() {
         </p>
         <ul className="list-disc pl-5">
           <li>法令に基づく場合</li>
-          <li>人の生命・身体・財産の保護が必要な場合で、ご本人の同意を得ることが困難なとき</li>
-          <li>公衆衛生の向上に特に必要な場合で、ご本人の同意を得ることが困難なとき</li>
+          <li>
+            人の生命・身体・財産の保護が必要な場合で、ご本人の同意を得ることが困難なとき
+          </li>
+          <li>
+            公衆衛生の向上に特に必要な場合で、ご本人の同意を得ることが困難なとき
+          </li>
         </ul>
 
         <h2 className="font-semibold">5. Gmailを用いた送信について</h2>
         <p>
-          当サイトのお問い合わせフォームにて送信された内容は、Gmail を通じて送信されます。これにより、Google のプライバシーポリシーに準拠して情報が取り扱われます。
+          当サイトのお問い合わせフォームにて送信された内容は、Gmail
+          を通じて送信されます。これにより、Google
+          のプライバシーポリシーに準拠して情報が取り扱われます。
         </p>
 
         <h2 className="font-semibold">6. 個人情報に関する権利</h2>
@@ -53,8 +60,9 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p className="text-xs text-gray-500 pt-4">
-          制定日：2025年11月23日<br />
-          お問い合わせ先：sodenotategu@gmail.com
+          制定日：2026年2月28日
+          <br />
+          お問い合わせ先：
         </p>
       </div>
     </div>

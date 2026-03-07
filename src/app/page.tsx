@@ -128,6 +128,27 @@ const products = [
   },
 ];
 
+const newsItems = [
+  {
+    date: "2026.03.7",
+    title: "造作デスクを制作しました。",
+    image: "/work_desk.jpg",
+    images: ["/work_desk.jpg", "/kouba.webp"],
+    alt: "工房の写真",
+    detail:
+      "造作デスクを製作しました。デザイン性の高いメラミン化粧板を使用し、既製品にはない一台に仕上げました。",
+  },
+  {
+    date: "2026.03.01",
+    title: "公式サイトのお知らせ欄を公開しました",
+    image: "/kouba.webp",
+    images: ["/kouba.webp", "/work_desk.jpg"],
+    alt: "工房の写真",
+    detail:
+      "袖野建具店の最新情報をお届けするため、お知らせ欄を公開しました。今後は施工事例や営業案内などを随時更新していきます。",
+  },
+];
+
 export default function Page() {
   return (
     <main>
@@ -140,9 +161,9 @@ export default function Page() {
       />
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 via-white to-gray-100 shadow-sm border border-gray-100">
-          <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 items-center">
-            {/* 左：イメージ画像 */}
-            <div className="relative">
+          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-10 p-8 md:p-12 items-center">
+            {/* 右：イメージ画像 */}
+            <div className="relative md:order-2 md:ml-auto md:w-full md:max-w-[460px]">
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl shadow-md bg-gray-200">
                 <Image
                   src="/kouba.webp"
@@ -151,13 +172,13 @@ export default function Page() {
                   className="object-cover object-center"
                 />
               </div>
-              <p className="mt-4 text-xs text-gray-500">
+              <p className="mt-4 text-xs text-gray-500 md:text-right">
                 ※実際の弊社の工場です。建具、造作家具を一から丹精込めて制作します。
               </p>
             </div>
 
-            {/* 右：テキストエリア */}
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            {/* 左：テキストエリア */}
+            <div className="space-y-6 text-gray-700 leading-relaxed md:order-1">
               {/* 小ラベル */}
               <span className="inline-flex items-center rounded-full bg-brand text-white text-xs px-3 py-1 tracking-[0.2em] uppercase">
                 ABOUT
@@ -229,6 +250,10 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <hr className="border-gray-300 my-12" />
+
+      <News />
 
       <hr className="border-gray-300 my-12" />
 
@@ -409,5 +434,93 @@ export default function Page() {
         </a>
       </section>
     </main>
+  );
+}
+
+function News() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-4">
+      <h2 className="text-3xl font-bold text-center mb-8">お知らせ</h2>
+      <div className="grid gap-6">
+        {newsItems.map((item) => (
+          <article
+            key={item.title}
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 grid md:grid-cols-[220px_1fr] gap-6 items-center"
+          >
+            <div className="space-y-3">
+              <p className="text-sm text-gray-500">{item.date}</p>
+              <h3 className="text-xl font-semibold text-gray-900">
+                {item.title}
+              </h3>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="inline-flex items-center px-4 py-2 rounded-md bg-brand text-white hover:bg-black transition">
+                    詳細
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-2xl">
+                  <DialogHeader>
+                    <p className="text-sm text-gray-500">{item.date}</p>
+                    <DialogTitle>{item.title}</DialogTitle>
+                  </DialogHeader>
+
+                  <div className="space-y-4">
+                    <p className="text-xs text-gray-500">
+                      画像をタップすると拡大表示できます。
+                    </p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {item.images.map((src, index) => (
+                        <Dialog key={`${item.title}-${src}-${index}`}>
+                          <DialogTrigger asChild>
+                            <button
+                              type="button"
+                              className="relative w-full h-44 rounded-lg overflow-hidden ring-1 ring-gray-200 hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+                            >
+                              <Image
+                                src={src}
+                                alt={`${item.alt} ${index + 1}`}
+                                fill
+                                className="object-cover object-center"
+                              />
+                            </button>
+                          </DialogTrigger>
+                          <DialogContent className="sm:max-w-5xl">
+                            <DialogHeader>
+                              <DialogTitle className="text-base">
+                                {item.title}（画像{index + 1}）
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden">
+                              <Image
+                                src={src}
+                                alt={`${item.alt} ${index + 1}`}
+                                fill
+                                className="object-contain bg-black/90"
+                              />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+            <div className="relative w-full h-44 rounded-lg overflow-hidden">
+              <Image
+                src={item.image}
+                alt={item.alt}
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
