@@ -132,15 +132,15 @@ const newsItems = [
   {
     date: "2026.03.7",
     title: "造作デスクを制作しました。",
-    image: "/work_desk.jpg",
+    image: "/work_desk.webp",
     images: [
-      "/work_desk.jpg",
-      "/work_desk1.JPG",
-      "/work_desk2.JPG",
-      "/work_desk3.JPG",
-      "/work_desk4.JPG",
-      "/work_desk5.JPG",
-      "/work_desk6.JPG",
+      "/work_desk.webp",
+      "/work_desk1.webp",
+      "/work_desk2.webp",
+      "/work_desk3.webp",
+      "/work_desk4.webp",
+      "/work_desk5.webp",
+      "/work_desk6.webp",
     ],
     alt: "工房の写真",
     detail:
