@@ -15,10 +15,9 @@ type AnimatedHeroImageProps = {
 };
 
 const heroVariants: Variants = {
-  hidden: { opacity: 0, scale: 1.05, filter: "blur(8px)" },
+  hidden: { opacity: 0, filter: "blur(8px)" },
   show: (delay = 0) => ({
     opacity: 1,
-    scale: 1,
     filter: "blur(0px)",
     transition: {
       duration: 1.2,
@@ -40,7 +39,7 @@ export default function AnimatedHeroImage({
   return (
     <MotionConfig reducedMotion="user">
       <motion.section
-        className={`relative w-full h-[80vh] overflow-hidden flex items-center justify-center ${className}`}
+        className={`relative w-full h-[80svh] overflow-hidden flex items-center justify-center ${className}`}
         variants={heroVariants}
         initial="hidden"
         animate="show"
@@ -62,8 +61,8 @@ export default function AnimatedHeroImage({
         <div className="relative z-10 flex flex-col items-center text-center text-white px-3">
           {/* ロゴ */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Image
@@ -76,8 +75,8 @@ export default function AnimatedHeroImage({
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 30 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-lg md:text-2xl top-[10%] font-bold tracking-wide drop-shadow-lg"
           >
@@ -86,8 +85,8 @@ export default function AnimatedHeroImage({
 
           {/* キャッチコピー */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 30 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.0, duration: 0.8 }}
             className="text-lg md:text-2xl text-white/90"
           >
@@ -96,8 +95,8 @@ export default function AnimatedHeroImage({
 
           {/* CTAボタン */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 30 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
             className="mt-8"
           >

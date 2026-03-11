@@ -1,5 +1,3 @@
-
-import { kosugiMaru } from '@/app/ui/fonts';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -15,7 +13,7 @@ export default function Footer() {
             height={36}
             className="align-middle"
           />
-          <p className={`text-lg ${kosugiMaru.className}`}>袖野建具店</p>
+          <p className="text-lg">袖野建具店</p>
         </div>
         <p className="mb-2 mb-8">愛知県名古屋市を中心とした建具店</p>
         <p>著作権、及びお客様のプライバシー保護のため、サイト内の写真や内容の無断転載等はお断り致します。</p>
