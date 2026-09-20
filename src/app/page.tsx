@@ -131,7 +131,7 @@ const products = [
 const newsItems = [
   {
     date: "2026.03.7",
-    title: "造作デスクを制作しました。",
+    title: "造作デスクを製作しました。",
     image: "/work_desk.webp",
     images: [
       "/work_desk.webp",
@@ -154,6 +154,58 @@ const newsItems = [
     alt: "工房の写真",
     detail:
       "袖野建具店の最新情報をお届けするため、お知らせ欄を公開しました。今後は施工事例や営業案内などを随時更新していきます。",
+  },
+];
+
+type ProductionStep = {
+  title: string;
+  description: string;
+  points?: string[];
+  image?: string;
+  imageAlt?: string;
+};
+
+const productionSteps: ProductionStep[] = [
+  {
+    title: "まずはお問い合わせください！",
+    description:
+      "建具の交換、造作家具、修理など、気になることをお気軽にご相談ください。",
+  },
+  {
+    title: "ご要望ヒアリング",
+    description:
+      "暮らし方や収納量、部屋の雰囲気に合わせて、具体的なご希望を伺います。",
+    points: [
+      "お皿をたくさんしまえるカップボード",
+      "部屋の雰囲気にあった引き戸",
+    ],
+  },
+  {
+    title: "設置場所の採寸をさせて頂きます",
+    description:
+      "現地の寸法や納まりを確認し、ミリ単位で設置場所に合う形を検討します。",
+  },
+  {
+    title: "建具、造作家具の部材をお選び頂きます",
+    description:
+      "色味や質感、使い勝手を見ながら、空間に馴染む部材をお選びいただきます。",
+    image: "/top_flow3.JPG",
+    imageAlt: "造作家具に使う部材の見本",
+  },
+  {
+    title: "図面を作成いたします",
+    description:
+      "ヒアリングと採寸内容をもとに、寸法や仕様を確認できる図面を作成します。",
+    image: "/top_flow1.png",
+    imageAlt: "造作家具の図面",
+  },
+  {
+    title: "製作",
+    description: "決定した仕様に沿って、職人が一つひとつ丁寧に製作します。",
+  },
+  {
+    title: "納品",
+    description: "仕上がった建具や家具を搬入し、設置後の状態まで確認します。",
   },
 ];
 
@@ -181,7 +233,7 @@ export default function Page() {
                 />
               </div>
               <p className="mt-4 text-xs text-gray-500 md:text-right">
-                ※実際の弊社の工場です。建具、造作家具を一から丹精込めて制作します。
+                ※実際の弊社の工場です。建具、造作家具を一から丹精込めて製作します。
               </p>
             </div>
 
@@ -258,6 +310,10 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <hr className="border-gray-300 my-12" />
+
+      <ProductionFlow />
 
       <hr className="border-gray-300 my-12" />
 
@@ -445,6 +501,69 @@ export default function Page() {
         </a>
       </section>
     </main>
+  );
+}
+
+function ProductionFlow() {
+  return (
+    <section className="max-w-6xl mx-auto px-6 py-20">
+      <div className="text-center mb-12">
+        <span className="inline-flex items-center rounded-full bg-brand text-white text-xs px-3 py-1 tracking-[0.2em] uppercase">
+          FLOW
+        </span>
+        <h2 className="text-3xl font-bold mt-4">製作手順</h2>
+        <p className="mt-4 text-gray-600 leading-relaxed">
+          お問い合わせから納品まで
+          <br />
+          内容を確認しながら丁寧に進めます。
+        </p>
+      </div>
+
+      <ul className="production-steps mx-auto w-full max-w-3xl">
+        {productionSteps.map((step, index) => {
+          return (
+            <li
+              key={step.title}
+              className="production-step relative grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-2 pb-6 text-left last:pb-0"
+            >
+              <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div className="w-full max-w-2xl rounded-xl border border-gray-100 bg-white p-5 text-left shadow-sm">
+                <h3 className="text-xl font-bold text-gray-900">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                  {step.description}
+                </p>
+
+                {step.points && (
+                  <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                    {step.points.map((point) => (
+                      <li key={point} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-700" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {step.image && (
+                  <div className="relative mt-5 h-56 overflow-hidden rounded-xl border-4 border-zinc-800 bg-gray-100 shadow-sm md:h-72">
+                    <Image
+                      src={step.image}
+                      alt={step.imageAlt ?? step.title}
+                      fill
+                      className="object-cover object-center"
+                    />
+                  </div>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 

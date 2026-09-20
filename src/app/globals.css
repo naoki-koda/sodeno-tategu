@@ -122,3 +122,15 @@
   }
 }
 
+@layer components {
+  .production-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 2rem;
+    bottom: -0.5rem;
+    width: 0.5rem;
+    transform: translateX(-50%);
+    background-color: #f15a24;
+  }
+}
