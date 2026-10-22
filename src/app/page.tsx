@@ -202,6 +202,8 @@ const productionSteps: ProductionStep[] = [
   {
     title: "製作",
     description: "決定した仕様に沿って、職人が一つひとつ丁寧に製作します。",
+    image: "/top_flow4.jpg",
+    imageAlt: "建具や造作家具の製作風景",
   },
   {
     title: "納品",
